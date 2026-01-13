@@ -1,0 +1,64 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Natural",
+  "scopeName": "source.natural",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#database-access" },
+    { "include": "#constants" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.asterisk.natural",
+          "match": "^\\*.*$"
+        },
+        {
+          "name": "comment.line.slash.natural",
+          "match": "\\/\\*.*$"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.single.natural",
+      "begin": "'",
+      "end": "'",
+      "patterns": [{ "match": "''" }]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.natural",
+          "match": "(?i)\\b(IF|THEN|ELSE|END-IF|DECIDE|VALUE|WHEN|END-DECIDE|FOR|FROM|TO|STEP|ENDFOR|REPEAT|UNTIL|WHILE|END-REPEAT|ESCAPE|ROUTINE|RETURN)\\b"
+        },
+        {
+          "name": "keyword.other.natural",
+          "match": "(?i)\\b(DEFINE|DATA|LOCAL|GLOBAL|PARAMETER|END-DEFINE|WRITE|DISPLAY|INPUT|PRINT|MOVE|COMPUTE|ASSIGN|RESET|COMPRESS|EXAMINE|REPLACE)\\b"
+        }
+      ]
+    },
+    "database-access": {
+      "patterns": [
+        {
+          "name": "keyword.database.natural",
+          "match": "(?i)\\b(FIND|READ|HISTOGRAM|GET|STORE|UPDATE|DELETE|END-FIND|END-READ|END-HISTOGRAM|FIND|WITH|WHERE|SORTED|BY)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.numeric.natural",
+          "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+        },
+        {
+          "name": "constant.language.system-var.natural",
+          "match": "(?i)\\*([A-Z][A-Z0-9-]*)?|\\b(TRUE|FALSE)\\b"
+        }
+      ]
+    }
+  }
+}
