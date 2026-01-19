@@ -2,7 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Natural",
   "scopeName": "source.natural",
-  "uuid": "2d1c1e4a-c6cd-41c5-91b8-3e65e2ef5be9",
   "fileTypes": ["nat", "nsp", "nsn", "nsl", "nsa", "nss", "nsc", "nsg", "nsm"],
   "patterns": [
     { "include": "#comments" },
